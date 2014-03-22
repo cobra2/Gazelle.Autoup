@@ -5,7 +5,10 @@
 # the goal is to use the file as input with the torrent upload script
 # to provide info for various fields on upload.php. Eventually this 
 # will get combined directly into the upload script.... I hope. 
-# 
+#
+# DEPENDS:
+# libxml2
+#
 # intergrate getopts
 #usage()
 #{
@@ -38,7 +41,7 @@
 #done
 
 # url variable needs to take a list as input -- i.e. look at mashpodder
-url="http://hackerpublicradio.org/hpr_rss.php"
+url="http://hackerpublicradio.org/hpr_total_rss.php"
 # Base command
 #cmd="xml sel -t -m '/rss/channel/item[$n]' "
 
@@ -75,3 +78,4 @@ do
 
 	n=$(( n+1))
 done
+rm $feed
